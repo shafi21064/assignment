@@ -163,7 +163,7 @@ class HomePage extends StatelessWidget {
                                       crossAxisAlignment:
                                       CrossAxisAlignment.start,
                                       children: [
-                                        Text('Name: ',
+                                        Text('Position: ',
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 20,
@@ -172,7 +172,7 @@ class HomePage extends StatelessWidget {
                                           height: 20,
                                         ),
                                         Text(
-                                          'Md Shadikul Islam Shafi',
+                                          'Mobile Application Developer',
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 16),
@@ -184,23 +184,71 @@ class HomePage extends StatelessWidget {
                                     width: 10,
                                   ),
                                   Container(
+                                    padding: const EdgeInsets.only(
+                                      top: 35,
+                                      left: 10,
+                                    ),
                                     height: 150,
                                     width: 150,
                                     decoration: BoxDecoration(
                                         color: const Color(0xff96b0ee),
                                         borderRadius:
                                             BorderRadius.circular(20)),
+                                    child: const Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        Text('Education: ',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold)),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Text(
+                                          'Diploma in Computer Engineering',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                   const SizedBox(
                                     width: 10,
                                   ),
                                   Container(
+                                    padding: const EdgeInsets.only(
+                                      top: 35,
+                                      left: 10,
+                                    ),
                                     height: 150,
                                     width: 150,
                                     decoration: BoxDecoration(
                                         color: const Color(0xff5199e4),
                                         borderRadius:
                                             BorderRadius.circular(20)),
+                                    child: const Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        Text('GPA: ',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold)),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Text(
+                                          ' I have got: \n 3.91',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16),
+                                        )
+                                      ],
+                                    ),
                                   )
                                 ],
                               ),
