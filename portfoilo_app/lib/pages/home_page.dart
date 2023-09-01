@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfoilo_app/pages/drawer_page.dart';
+import 'package:portfoilo_app/widgets/card_button.dart';
+import 'package:portfoilo_app/widgets/rich_text.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,262 +9,90 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffd0e0f2),
-      appBar: AppBar(
-        leading: const Icon(
-          Icons.menu_rounded,
-          color: Colors.black,
+        backgroundColor: const Color(0xffd0e0f2),
+        appBar: AppBar(
+          elevation: 0,
         ),
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
-      body: Container(
-        margin: const EdgeInsets.all(16),
-        child: Column(
+        drawer: DrawerPage(),
+        body: Column(
           children: [
-            const Row(
+            Stack(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Md Shadikul Islam Shafi",
-                      style: TextStyle(
-                          color: Color(0xff445771),
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "App Developer",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                          color: Color(0xff7c97bf),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
+                Container(
+                  height: 200,
+                  width: MediaQuery.sizeOf(context).width,
+                  decoration: const BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(60),
+                          bottomRight: Radius.circular(60))),
                 ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Expanded(
-              child: Stack(
-                  alignment: AlignmentDirectional.bottomCenter,
-                  clipBehavior: Clip.none,
-                  children: [
-                    const Positioned(
-                      top: 0,
-                      child: Image(
-                        height: 400,
-                        image: AssetImage(
+                SafeArea(
+                    child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const CircleAvatar(
+                        minRadius: 30,
+                        maxRadius: 40,
+                        backgroundColor: Color(0xffd0e0f2),
+                        backgroundImage: AssetImage(
                           'assets/images/profile.png',
                         ),
                       ),
-                    ),
-                    Positioned(
-                      top: 300,
-                      child: Container(
-                        padding: const EdgeInsets.all(16),
-                        height: 350,
-                        width: 400,
-                        decoration: const BoxDecoration(
-                            color: Color(0xfff5f9fc),
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(40),
-                                topRight: Radius.circular(40))),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10, left: 10),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                        'Can I help you?',
-                                      style: TextStyle(
-                                        color: Color(0xff445771),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold
-                                      ),
-                                    ),
-                                    Text(
-                                        "Let's Work? ",
-                                      style: TextStyle(
-                                        color: Color(0xff7c97bf),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                ElevatedButton(
-                                    onPressed: () {
-                                      debugPrint('working');
-                                    },
-                                    child: const Text('Contact me'))
-                              ],
+                            RichTextWidget(
+                              title: 'Name:',
+                              subtitle: 'Md Shadikul Islam Shafi',
                             ),
-                            const SizedBox(
-                              height: 30,
-                            ),
-                            SizedBox(
-                              height: 160,
-                              //width: 500,
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.only(
-                                        top: 35,
-                                        left: 10
-                                    ),
-                                    height: 150,
-                                    width: 150,
-                                    decoration: BoxDecoration(
-                                        color: const Color(0xfff197bc),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: const Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Name: ',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold)),
-                                        SizedBox(
-                                          height: 20,
-                                        ),
-                                        Text(
-                                          'Md Shadikul Islam Shafi',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 16),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    padding: const EdgeInsets.only(
-                                        top: 35,
-                                        left: 10
-                                    ),
-                                    height: 150,
-                                    width: 150,
-                                    decoration: BoxDecoration(
-                                        color: const Color(0xff7cc8d2),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: const Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Position: ',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold)),
-                                        SizedBox(
-                                          height: 20,
-                                        ),
-                                        Text(
-                                          'Mobile Application Developer',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 16),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    padding: const EdgeInsets.only(
-                                      top: 35,
-                                      left: 10,
-                                    ),
-                                    height: 150,
-                                    width: 150,
-                                    decoration: BoxDecoration(
-                                        color: const Color(0xff96b0ee),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: const Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Education: ',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold)),
-                                        SizedBox(
-                                          height: 20,
-                                        ),
-                                        Text(
-                                          'Diploma in Computer Engineering',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 16),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    padding: const EdgeInsets.only(
-                                      top: 35,
-                                      left: 10,
-                                    ),
-                                    height: 150,
-                                    width: 150,
-                                    decoration: BoxDecoration(
-                                        color: const Color(0xff5199e4),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: const Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Text('GPA: ',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold)),
-                                        SizedBox(
-                                          height: 20,
-                                        ),
-                                        Text(
-                                          ' I have got: \n 3.91',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 16),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                            )
+                            RichTextWidget(title: 'Roll:', subtitle: '114097'),
+                            RichTextWidget(
+                                title: 'Department',
+                                subtitle: 'Computer Technology')
                           ],
                         ),
-                      ),
-                    )
-                  ]),
+                      )
+                    ],
+                  ),
+                )),
+              ],
+            ),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                children: [
+                  CardButton(
+                      imageIcon: 'assets/images/profile.png',
+                      textInfo: 'academic'),
+                  CardButton(
+                      imageIcon: 'assets/images/profile.png',
+                      textInfo: 'academic'),
+                  CardButton(
+                      imageIcon: 'assets/images/profile.png',
+                      textInfo: 'academic'),
+                  CardButton(
+                      imageIcon: 'assets/images/profile.png',
+                      textInfo: 'academic'),
+                  CardButton(
+                      imageIcon: 'assets/images/profile.png',
+                      textInfo: 'academic'),
+                  CardButton(
+                      imageIcon: 'assets/images/profile.png',
+                      textInfo: 'academic')
+                ],
+              ),
             )
           ],
-        ),
-      ),
+        )
     );
   }
 }
