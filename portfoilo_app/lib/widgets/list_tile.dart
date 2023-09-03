@@ -11,8 +11,8 @@ class ListTileWidget extends StatelessWidget {
       height: 100,
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
-          border: Border.all(width: 3, color: Color(0xff445771)),
-          color: Colors.blue,
+          border: Border.all(width: 3, color: Color(0xff7cc8d2)),
+          color: Color(0xff5199e4),
           borderRadius: BorderRadius.circular(40)
       ),
       child: ListTile(
