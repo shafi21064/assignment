@@ -9,29 +9,30 @@ class DrawerPage extends StatelessWidget {
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text(
+            margin: EdgeInsets.zero,
+            accountName: const Text(
               'Md Shadikul Islam Shafi',
               style: TextStyle(fontSize: 16),
             ),
-            accountEmail: Text('mdshadikulislamshafi@gmail.com'),
+            accountEmail: const Text('mdshadikulislamshafi@gmail.com'),
             currentAccountPicture: Image.asset('assets/images/profile.png'),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.home_filled),
             title: Text('Home'),
             trailing: Icon(Icons.arrow_forward),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.bookmark_add_outlined),
             title: Text('Academic'),
             trailing: Icon(Icons.arrow_forward),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.account_circle),
             title: Text('Account'),
             trailing: Icon(Icons.arrow_forward),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(Icons.login_outlined),
             title: Text('Log Out'),
             trailing: Icon(Icons.arrow_forward),

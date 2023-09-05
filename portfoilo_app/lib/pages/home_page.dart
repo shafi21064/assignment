@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfoilo_app/pages/academic_page.dart';
 import 'package:portfoilo_app/pages/drawer_page.dart';
+import 'package:portfoilo_app/pages/info_page.dart';
 import 'package:portfoilo_app/widgets/card_button.dart';
 import 'package:portfoilo_app/widgets/rich_text.dart';
 
@@ -29,39 +31,39 @@ class HomePage extends StatelessWidget {
                 ),
                 SafeArea(
                     child: Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const CircleAvatar(
-                        minRadius: 30,
-                        maxRadius: 40,
-                        backgroundColor: Color(0xffd0e0f2),
-                        backgroundImage: AssetImage(
-                          'assets/images/profile.png',
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10, left: 10),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            RichTextWidget(
-                              title: 'Name:',
-                              subtitle: 'Md Shadikul Islam Shafi',
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const CircleAvatar(
+                            minRadius: 30,
+                            maxRadius: 40,
+                            backgroundColor: Color(0xffd0e0f2),
+                            backgroundImage: AssetImage(
+                              'assets/images/profile.png',
                             ),
-                            RichTextWidget(title: 'Roll:', subtitle: '114097'),
-                            RichTextWidget(
-                                title: 'Department',
-                                subtitle: 'Computer Technology')
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                )),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10, left: 10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                RichTextWidget(
+                                  title: 'Name:',
+                                  subtitle: 'Md Shadikul Islam Shafi',
+                                ),
+                                RichTextWidget(title: 'Roll:', subtitle: '114097'),
+                                RichTextWidget(
+                                    title: 'Department',
+                                    subtitle: 'Computer Technology')
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )),
               ],
             ),
             Expanded(
@@ -70,29 +72,36 @@ class HomePage extends StatelessWidget {
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
                 children: [
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> StudentInfoPage()));
+                    },
+                    child: CardButton(
+                        imageIcon: 'assets/images/profile.png',
+                        textInfo: "Studen't Info"),
+                  ),
                   CardButton(
                       imageIcon: 'assets/images/profile.png',
-                      textInfo: 'academic'),
+                      textInfo: 'Book list'),
                   CardButton(
                       imageIcon: 'assets/images/profile.png',
-                      textInfo: 'academic'),
+                      textInfo: 'Semester Plan'),
                   CardButton(
                       imageIcon: 'assets/images/profile.png',
-                      textInfo: 'academic'),
+                      textInfo: 'Academic'),
+                  GestureDetector(
+                    onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=> AcademicPage()));},
+                    child: CardButton(
+                        imageIcon: 'assets/images/profile.png',
+                        textInfo: 'Result'),
+                  ),
                   CardButton(
                       imageIcon: 'assets/images/profile.png',
-                      textInfo: 'academic'),
-                  CardButton(
-                      imageIcon: 'assets/images/profile.png',
-                      textInfo: 'academic'),
-                  CardButton(
-                      imageIcon: 'assets/images/profile.png',
-                      textInfo: 'academic')
+                      textInfo: 'Account')
                 ],
               ),
             )
           ],
-        )
-    );
+        ));
   }
 }

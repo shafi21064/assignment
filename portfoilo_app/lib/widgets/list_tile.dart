@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ListTileWidget extends StatelessWidget {
-  const ListTileWidget({super.key});
+
+  final String semesterName, gpa;
+
+  const ListTileWidget({super.key, required this.semesterName, required this.gpa});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +20,8 @@ class ListTileWidget extends StatelessWidget {
       ),
       child: ListTile(
         leading: Image.asset('assets/images/profile.png'),
-        title: Text('Md Shadiku Islam Shafi'),
-        subtitle: Text('114097'),
+        title: Text('$semesterName'),
+        subtitle: Text('Gpa: $gpa'),
         trailing: Icon(Icons.arrow_forward_ios),
       ),
     );

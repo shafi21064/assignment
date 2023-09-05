@@ -62,12 +62,15 @@ class AcademicPage extends StatelessWidget {
           Expanded(
             child: ListView(
               children: [
-                ListTileWidget(),
-                 ListTileWidget(),
-                ListTileWidget(),
-                ListTileWidget(),
-                ListTileWidget(),
-                ListTileWidget()
+                ListTileWidget( semesterName: 'First Semester', gpa: '3.45',),
+                ListTileWidget( semesterName: 'Second Semester', gpa: '3.38',),
+                ListTileWidget( semesterName: 'Third Semester', gpa: '3.64',),
+                ListTileWidget( semesterName: 'Fourth Semester', gpa: '3.87',),
+                ListTileWidget( semesterName: 'Fifth Semester', gpa: '3.91',),
+                ListTileWidget( semesterName: 'Six Semester', gpa: '3.79',),
+                ListTileWidget( semesterName: 'Seven Semester', gpa: 'Not yet Published',),
+                ListTileWidget( semesterName: 'Eighth Semester', gpa: 'Not yet Published',),
+
 
               ],
             ),

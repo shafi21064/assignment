@@ -25,6 +25,7 @@ CardButton({Key? key,
         child: Column(
           children: [
             Image.asset(imageIcon, height: 120,),
+            SizedBox(height: 10,),
             Text(
               textInfo,
               style: const TextStyle(
