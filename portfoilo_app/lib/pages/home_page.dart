@@ -4,12 +4,16 @@ import 'package:portfoilo_app/pages/drawer_page.dart';
 import 'package:portfoilo_app/pages/info_page.dart';
 import 'package:portfoilo_app/widgets/card_button.dart';
 import 'package:portfoilo_app/widgets/rich_text.dart';
+import 'package:toast/toast.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    ToastContext().init(context);
+
     return Scaffold(
         backgroundColor: const Color(0xffd0e0f2),
         appBar: AppBar(
@@ -75,14 +79,20 @@ class HomePage extends StatelessWidget {
                   InkWell(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> StudentInfoPage()));
+                      Toast.show('this is student\'n info', duration: Toast.lengthLong, gravity: Toast.bottom);
                     },
                     child: CardButton(
                         imageIcon: 'assets/images/profile.png',
                         textInfo: "Studen't Info"),
                   ),
-                  CardButton(
-                      imageIcon: 'assets/images/profile.png',
-                      textInfo: 'Book list'),
+                  GestureDetector(
+                    onTap: (){
+                      Toast.show('this is book list', duration: Toast.lengthLong, gravity: Toast.bottom);
+                    },
+                    child: CardButton(
+                        imageIcon: 'assets/images/profile.png',
+                        textInfo: 'Book list'),
+                  ),
                   CardButton(
                       imageIcon: 'assets/images/profile.png',
                       textInfo: 'Semester Plan'),
