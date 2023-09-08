@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:portfoilo_app/provider/info_provider.dart';
+import 'package:provider/provider.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    var provider = Provider.of<InfoProvider>(context);
+
     return Scaffold(
       backgroundColor: const Color(0xffd0e0f2),
       appBar: AppBar(
@@ -19,22 +24,22 @@ class AccountPage extends StatelessWidget {
         margin: const EdgeInsets.all(16),
         child: Column(
           children: [
-            const Row(
+             Row(
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Md Shadikul Islam Shafi",
-                      style: TextStyle(
+                      "${provider.infoList[0]['name']}",
+                      style: const TextStyle(
                           color: Color(0xff445771),
                           fontSize: 25,
                           fontWeight: FontWeight.bold),
                     ),
-                    Text(
-                      "App Developer",
+                     Text(
+                      "${provider.infoList[0]['position']}",
                       textAlign: TextAlign.left,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Color(0xff7c97bf),
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
@@ -51,12 +56,12 @@ class AccountPage extends StatelessWidget {
                   alignment: AlignmentDirectional.bottomCenter,
                   clipBehavior: Clip.none,
                   children: [
-                    const Positioned(
+                     Positioned(
                       top: 0,
                       child: Image(
                         height: 400,
                         image: AssetImage(
-                          'assets/images/profile.png',
+                          '${provider.infoList[0]['image']}',
                         ),
                       ),
                     ),
@@ -80,20 +85,18 @@ class AccountPage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                        'Can I help you?',
+                                      'Can I help you?',
                                       style: TextStyle(
-                                        color: Color(0xff445771),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold
-                                      ),
+                                          color: Color(0xff445771),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                        "Let's Work? ",
+                                      "Let's Work? ",
                                       style: TextStyle(
-                                        color: Color(0xff7c97bf),
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold
-                                      ),
+                                          color: Color(0xff7c97bf),
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
                                     )
                                   ],
                                 ),
@@ -115,30 +118,28 @@ class AccountPage extends StatelessWidget {
                                 children: [
                                   Container(
                                     padding: const EdgeInsets.only(
-                                        top: 35,
-                                        left: 10
-                                    ),
+                                        top: 35, left: 10),
                                     height: 150,
                                     width: 150,
                                     decoration: BoxDecoration(
                                         color: const Color(0xfff197bc),
                                         borderRadius:
                                             BorderRadius.circular(20)),
-                                    child: const Column(
+                                    child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text('Name: ',
+                                        const Text('Name: ',
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold)),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 20,
                                         ),
                                         Text(
-                                          'Md Shadikul Islam Shafi',
-                                          style: TextStyle(
+                                          '${provider.infoList[0]['name']}',
+                                          style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 16),
                                         )
@@ -150,30 +151,28 @@ class AccountPage extends StatelessWidget {
                                   ),
                                   Container(
                                     padding: const EdgeInsets.only(
-                                        top: 35,
-                                        left: 10
-                                    ),
+                                        top: 35, left: 10),
                                     height: 150,
                                     width: 150,
                                     decoration: BoxDecoration(
                                         color: const Color(0xff7cc8d2),
                                         borderRadius:
                                             BorderRadius.circular(20)),
-                                    child: const Column(
+                                    child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text('Position: ',
+                                        const Text('Position: ',
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold)),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 20,
                                         ),
                                         Text(
-                                          'Mobile Application Developer',
-                                          style: TextStyle(
+                                          '${provider.infoList[0]['position']}',
+                                          style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 16),
                                         )
@@ -194,21 +193,21 @@ class AccountPage extends StatelessWidget {
                                         color: const Color(0xff96b0ee),
                                         borderRadius:
                                             BorderRadius.circular(20)),
-                                    child: const Column(
+                                    child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text('Education: ',
+                                        const Text('Education: ',
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold)),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 20,
                                         ),
                                         Text(
-                                          'Diploma in Computer Engineering',
-                                          style: TextStyle(
+                                          '${provider.infoList[0]['education']}',
+                                          style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 16),
                                         )
@@ -229,21 +228,21 @@ class AccountPage extends StatelessWidget {
                                         color: const Color(0xff5199e4),
                                         borderRadius:
                                             BorderRadius.circular(20)),
-                                    child: const Column(
+                                    child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text('GPA: ',
+                                        const Text('GPA: ',
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold)),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 20,
                                         ),
                                         Text(
-                                          ' I have got: \n 3.91',
-                                          style: TextStyle(
+                                          ' I have got: \n ${provider.infoList[0]['gpa']}',
+                                          style: const TextStyle(
                                               color: Colors.white,
                                               fontSize: 16),
                                         )
