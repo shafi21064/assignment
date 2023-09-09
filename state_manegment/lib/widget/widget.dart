@@ -19,7 +19,7 @@ class ButtonWidget extends StatelessWidget {
       child: Center(
           child: Text(
         boxName,
-        style: TextStyle(fontSize: 18, color: Colors.white),
+        style: const TextStyle(fontSize: 18, color: Colors.white),
       )),
     );
   }
