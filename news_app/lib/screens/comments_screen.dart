@@ -13,10 +13,10 @@ class CommentsScreen extends StatelessWidget {
     var provider = Provider.of<ApiProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Comments Screen'),
+        title: const Text('Comments Screen'),
         centerTitle: true,
       ),
-      drawer: DrawerScreen(),
+      drawer: const DrawerScreen(),
       body: FutureBuilder(
         future: provider.getPostResponse('comments'),
         builder: (context, snapshot) {

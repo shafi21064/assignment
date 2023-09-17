@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/provider/post_api_provider.dart';
 import 'package:news_app/screens/drawer_sreen.dart';
+import 'package:news_app/screens/user_details_screen.dart';
 import 'package:provider/provider.dart';
 
 class UserScreen extends StatelessWidget {
@@ -27,19 +28,33 @@ class UserScreen extends StatelessWidget {
                   return Card(
                     margin: const EdgeInsets.all(10),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)
-                    ),
-                    child: ListTile(
-                      leading: const CircleAvatar(backgroundImage: NetworkImage(
-                          'https://image.shutterstock.com/image-vector/dotted-spiral-vortex-royaltyfree-images-600w-2227567913.jpg')),
-                      title: Text(
-                          provider.apiResponse[index]["username"].toString()),
-                      subtitle: Text(provider.apiResponse[index]["email"]),
-                      trailing: const Icon(Icons.arrow_forward_ios),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UserDetailsScreen(
+                                  appTitile: provider.apiResponse[index]["username"],
+                                      name: provider.apiResponse[index]["name"],
+                                      email: provider.apiResponse[index]
+                                          ["email"],
+                                      address:
+                                          'Street Name: ${provider.apiResponse[index]["address"]["street"]}, \nCity: ${provider.apiResponse[index]["address"]["city"]}',
+                                    )));
+                      },
+                      child: ListTile(
+                        leading: const CircleAvatar(
+                            backgroundImage: NetworkImage(
+                                'https://image.shutterstock.com/image-vector/dotted-spiral-vortex-royaltyfree-images-600w-2227567913.jpg')),
+                        title: Text(
+                            provider.apiResponse[index]["username"].toString()),
+                        subtitle: Text(provider.apiResponse[index]["email"]),
+                        trailing: const Icon(Icons.arrow_forward_ios),
+                      ),
                     ),
                   );
-                }
-            );
+                });
           }
         },
       ),

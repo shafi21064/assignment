@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
-class CommentsDetailsScreen extends StatelessWidget {
-  String name, email, body;
-  CommentsDetailsScreen(
-      {super.key, required this.name, required this.email, required this.body});
+class UserDetailsScreen extends StatelessWidget {
+  String name, email, address, appTitile;
+  UserDetailsScreen(
+      {super.key,
+      required this.name,
+      required this.email,
+      required this.address,
+        required this.appTitile
+      });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Comments Details'),
+        title: Text(appTitile),
       ),
       body: Center(
         child: Container(
@@ -26,7 +31,7 @@ class CommentsDetailsScreen extends StatelessWidget {
             children: [
               RichText(
                 text: TextSpan(
-                    text: 'Name: ',
+                    text: 'Name:- ',
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -43,7 +48,7 @@ class CommentsDetailsScreen extends StatelessWidget {
               ),
               RichText(
                 text: TextSpan(
-                    text: 'Email: ',
+                    text: 'Email:- ',
                     style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     children: [
                       TextSpan(
@@ -57,11 +62,11 @@ class CommentsDetailsScreen extends StatelessWidget {
               ),
               RichText(
                 text: TextSpan(
-                    text: 'Comment: ',
+                    text: 'Address:- ',
                     style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     children: [
                       TextSpan(
-                          text: body,
+                          text: address,
                           style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.normal))
                     ]),
