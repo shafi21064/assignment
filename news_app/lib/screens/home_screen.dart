@@ -15,7 +15,8 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('News App'),
         centerTitle: true,
-      ), drawer: const DrawerScreen(),
+      ),
+      drawer: const DrawerScreen(),
       body: FutureBuilder(
         future: postProvider.getPostResponse('posts'),
         builder: (context, snapshot) {
@@ -28,33 +29,36 @@ class HomeScreen extends StatelessWidget {
                   return Card(
                     margin: const EdgeInsets.all(10),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)
-                    ),
+                        borderRadius: BorderRadius.circular(20)),
                     child: InkWell(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder:(context)=> DetailsScreen(
-                              title: postProvider.apiResponse[index]["title"],
-                              body: postProvider.apiResponse[index]["body"],
-                              appTitle: postProvider.apiResponse[index]["title"],
-                            )));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetailsScreen(
+                                      title: postProvider.apiResponse[index]
+                                          ["title"],
+                                      body: postProvider.apiResponse[index]
+                                          ["body"],
+                                      appTitle: postProvider.apiResponse[index]
+                                          ["title"],
+                                    )));
                       },
                       child: ListTile(
-                        leading: const CircleAvatar(backgroundImage: NetworkImage(
-                            'https://image.shutterstock.com/image-vector/dotted-spiral-vortex-royaltyfree-images-600w-2227567913.jpg')),
-                        title: Text(
-                            postProvider.apiResponse[index]["title"].toString()),
+                        leading: const CircleAvatar(
+                            backgroundImage: NetworkImage(
+                                'https://image.shutterstock.com/image-vector/dotted-spiral-vortex-royaltyfree-images-600w-2227567913.jpg')),
+                        title: Text(postProvider.apiResponse[index]["title"]
+                            .toString()),
                         subtitle: const Text('this is a news'),
                         trailing: const Icon(Icons.arrow_forward_ios),
                       ),
                     ),
                   );
-                }
-            );
+                });
           }
         },
       ),
     );
   }
 }
-

@@ -11,8 +11,7 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-
-  static const pages = [HomeScreen(),CommentsScreen(), UserScreen()];
+  static const pages = [HomeScreen(), CommentsScreen(), UserScreen()];
 
   int currentIndex = 0;
 
@@ -23,10 +22,12 @@ class _BottomNavigationState extends State<BottomNavigation> {
         currentIndex: currentIndex,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.explore_rounded), label: 'Comments'),
-          BottomNavigationBarItem(icon: Icon(Icons.supervised_user_circle), label: 'Users')
+          BottomNavigationBarItem(
+              icon: Icon(Icons.explore_rounded), label: 'Comments'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.supervised_user_circle), label: 'Users')
         ],
-        onTap: (index){
+        onTap: (index) {
           setState(() {
             currentIndex = index;
           });

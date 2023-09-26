@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/screens/bottom_navigation.dart';
 import 'package:news_app/screens/comments_screen.dart';
 import 'package:news_app/screens/home_screen.dart';
+import 'package:news_app/screens/log_In.dart';
 import 'package:news_app/screens/user_screen.dart';
 
 class DrawerScreen extends StatelessWidget {
@@ -50,6 +51,16 @@ class DrawerScreen extends StatelessWidget {
             child: const ListTile(
               leading: Icon(Icons.supervised_user_circle),
               title: Text('Users'),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
+          InkWell(
+            onTap: (){
+              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (contex)=> LogInPage()), (route) => false);
+            },
+            child: const ListTile(
+              leading: Icon(Icons.logout_outlined),
+              title: Text('Log Out'),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
           )
